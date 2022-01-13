@@ -11,7 +11,7 @@
  */
 
 var myMath = require('./myMath');
-var prompt = require('./prompt');
+var prompt = require('prompt-sync')();
 var path = require('path');
 global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
@@ -36,7 +36,7 @@ function application() {
   console.log('BEGIN main program loop');
   if (argumentDrivenInterface === false) {
     while (programRunning) {
-      commandInput = prompt.prompt('Enter a math operation: ');
+      commandInput = prompt('Enter a math operation: ');
 
       if (commandInput.toUpperCase().trim() === 'EXIT' ||
       commandInput.toUpperCase().trim() === 'QUIT' ||
